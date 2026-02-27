@@ -368,7 +368,7 @@ onMounted(() => {
         <h3>Latest Result</h3>
         <p>
           {{ latestResult.correctCount }} / {{ latestResult.totalQuestions }} correct
-          ({{ Math.round((latestResult.correctCount / latestResult.totalQuestions) * 100) }}%)
+          ({{ latestResult.totalQuestions > 0 ? Math.round((latestResult.correctCount / latestResult.totalQuestions) * 100) : 0 }}%)
         </p>
         <p>Completed: {{ new Date(latestResult.completedAt).toLocaleString() }}</p>
       </div>

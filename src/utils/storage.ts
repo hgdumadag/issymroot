@@ -23,6 +23,26 @@ function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === 'object' && value !== null;
 }
 
+function parseBreakdown(value: unknown): CompletedResult['breakdown'] | null {
+  if (!isRecord(value)) {
+    return null;
+  }
+
+  for (const key of CLASSIFICATION_TYPES) {
+    const entry = value[key];
+    if (
+      !isRecord(entry) ||
+      typeof entry.total !== 'number' ||
+      typeof entry.correct !== 'number' ||
+      typeof entry.accuracy !== 'number'
+    ) {
+      return null;
+    }
+  }
+
+  return value as CompletedResult['breakdown'];
+}
+
 function parseInProgress(payload: unknown): InProgressSession | null {
   if (!isRecord(payload)) {
     return null;
@@ -157,7 +177,12 @@ function parseCompletedResult(payload: unknown): CompletedResult | null {
         };
       });
 
-    if (typeof payload.totalQuestions !== 'number' || typeof payload.correctCount !== 'number' || !isRecord(payload.breakdown)) {
+    if (typeof payload.totalQuestions !== 'number' || typeof payload.correctCount !== 'number') {
+      return null;
+    }
+
+    const breakdown = parseBreakdown(payload.breakdown);
+    if (!breakdown) {
       return null;
     }
 
@@ -167,7 +192,7 @@ function parseCompletedResult(payload: unknown): CompletedResult | null {
       answers,
       totalQuestions: payload.totalQuestions,
       correctCount: payload.correctCount,
-      breakdown: payload.breakdown as CompletedResult['breakdown']
+      breakdown
     };
   } catch {
     return null;

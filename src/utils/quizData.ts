@@ -116,7 +116,7 @@ export function parseQuizItems(payload: unknown): QuizItem[] {
 }
 
 export async function loadQuizItems(url = '/data/quiz-items.json'): Promise<QuizItem[]> {
-  const response = await fetch(url, { cache: 'no-store' });
+  const response = await fetch(url, { cache: 'no-cache' });
 
   if (!response.ok) {
     throw new Error(`Failed to load quiz data (HTTP ${response.status}).`);
