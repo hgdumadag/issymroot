@@ -1,0 +1,242 @@
+[
+  {
+    "id": "ops-401",
+    "statement": "Average order-to-ship cycle time rose from 9 hours to 16 hours this week.",
+    "correct_type": "symptom",
+    "rationale_correct": "This is an observed performance signal. It describes what changed, not a stated control deviation or underlying reason.",
+    "common_traps": {
+      "issue": "It may indicate an issue, but no explicit service-level requirement breach is named.",
+      "root_cause": "The statement does not identify why cycle time increased."
+    },
+    "tags": ["Ops", "Fulfillment", "KPI"],
+    "difficulty": "easy"
+  },
+  {
+    "id": "ops-402",
+    "statement": "Daily inventory reconciliation was not completed before the 6:00 AM cutoff required by operations policy.",
+    "correct_type": "issue",
+    "rationale_correct": "This directly states deviation from a required control deadline.",
+    "common_traps": {
+      "symptom": "Late completion is observable, but the explicit policy cutoff miss makes it issue-level.",
+      "root_cause": "No reason is provided for the delayed reconciliation."
+    },
+    "tags": ["Ops", "Inventory", "Controls"],
+    "difficulty": "easy"
+  },
+  {
+    "id": "ops-403",
+    "statement": "Warehouse receiving relies on one barcode scanner station with no backup unit.",
+    "correct_type": "root_cause",
+    "rationale_correct": "This describes an underlying process/design weakness that enables recurring throughput and control failures.",
+    "common_traps": {
+      "symptom": "Queue buildup is a symptom; single-point equipment dependency is causal.",
+      "issue": "Issue-level deviations may occur, but this statement identifies the enabling reason."
+    },
+    "tags": ["Ops", "Warehouse", "Process Design"],
+    "difficulty": "easy"
+  },
+  {
+    "id": "ops-404",
+    "statement": "The number of rush shipments increased from 22 to 79 over the last ten business days.",
+    "correct_type": "symptom",
+    "rationale_correct": "This is a trend signal from operations data, not an explicit control deviation or root mechanism.",
+    "common_traps": {
+      "issue": "It could imply an issue, but no required policy threshold is stated.",
+      "root_cause": "No underlying reason for the increase is specified."
+    },
+    "tags": ["Ops", "Logistics", "KPI"],
+    "difficulty": "easy"
+  },
+  {
+    "id": "ops-405",
+    "statement": "Shift handoff checklists were missing supervisor sign-off on 14 of 40 sampled shift changes, violating procedure.",
+    "correct_type": "issue",
+    "rationale_correct": "This explicitly indicates noncompliance with a documented control requirement.",
+    "common_traps": {
+      "symptom": "Sample counts are observable, but missing required sign-off is a control deviation.",
+      "root_cause": "The statement does not explain why sign-off was missed."
+    },
+    "tags": ["Ops", "Shift Operations", "Compliance"],
+    "difficulty": "easy"
+  },
+  {
+    "id": "ops-406",
+    "statement": "Dock door idle time increased by 31% after the carrier schedule change.",
+    "correct_type": "symptom",
+    "rationale_correct": "This is an observed efficiency signal and does not itself define a control breach or cause.",
+    "common_traps": {
+      "issue": "Could indicate an issue, but no explicit service-level criterion is cited.",
+      "root_cause": "The underlying mechanism is not identified."
+    },
+    "tags": ["Ops", "Warehouse", "Logistics"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "ops-407",
+    "statement": "Preventive maintenance logs for conveyor systems were not completed on the weekly cadence required by SOP.",
+    "correct_type": "issue",
+    "rationale_correct": "This is direct deviation from a documented control frequency.",
+    "common_traps": {
+      "symptom": "Missed logs are observable, but required cadence breach makes it issue-level.",
+      "root_cause": "No explanation is provided for why maintenance was skipped."
+    },
+    "tags": ["Ops", "Maintenance", "Controls"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "ops-408",
+    "statement": "The scheduling tool has no constraint rule for dock capacity, allowing overbooking during peak windows.",
+    "correct_type": "root_cause",
+    "rationale_correct": "Missing capacity constraints is an underlying system design gap enabling recurring bottlenecks.",
+    "common_traps": {
+      "symptom": "Congestion is a symptom; absent constraint logic is causal.",
+      "issue": "Control deviations may result, but this sentence identifies why they recur."
+    },
+    "tags": ["Ops", "Planning", "Systems"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "ops-409",
+    "statement": "Outbound orders not scanned at final verification exceeded the 0.5% tolerance in three consecutive days.",
+    "correct_type": "issue",
+    "rationale_correct": "This explicitly states a breach of a defined control tolerance.",
+    "common_traps": {
+      "symptom": "The rate is measurable, but exceeding tolerance is issue-level noncompliance.",
+      "root_cause": "The statement does not identify why verification scans were missed."
+    },
+    "tags": ["Ops", "Quality", "Controls"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "ops-410",
+    "statement": "Return-to-stock processing backlog rose from 180 to 620 units in two weeks.",
+    "correct_type": "symptom",
+    "rationale_correct": "This is an observed backlog trend and does not by itself describe a breached requirement or root reason.",
+    "common_traps": {
+      "issue": "It may indicate an issue, but no explicit policy or SLA breach is stated.",
+      "root_cause": "No enabling mechanism is identified."
+    },
+    "tags": ["Ops", "Returns", "KPI"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "ops-411",
+    "statement": "Cycle-count variances were adjusted without second approver review, contrary to inventory control policy.",
+    "correct_type": "issue",
+    "rationale_correct": "This is explicit deviation from a required control activity.",
+    "common_traps": {
+      "symptom": "Adjustments are observable events, but bypassing required review is the issue.",
+      "root_cause": "No cause for review bypass is provided."
+    },
+    "tags": ["Ops", "Inventory", "Compliance"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "ops-412",
+    "statement": "The replenishment model uses stale demand parameters because forecast sync executes monthly while sales mix shifts weekly.",
+    "correct_type": "root_cause",
+    "rationale_correct": "Misaligned data refresh design is an underlying reason enabling stockouts and overstock conditions.",
+    "common_traps": {
+      "symptom": "Stockout rate is a symptom; stale parameter cadence is causal.",
+      "issue": "Issue-level misses can occur, but this statement identifies enabling cause."
+    },
+    "tags": ["Ops", "Planning", "Forecasting"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "ops-413",
+    "statement": "On-time dispatch dropped from 97% to 89% after route assignment changes.",
+    "correct_type": "symptom",
+    "rationale_correct": "This is a measured service signal and does not explicitly state control deviation or root cause.",
+    "common_traps": {
+      "issue": "It may imply an issue, but no explicit contractual/SLA threshold breach is stated.",
+      "root_cause": "The statement does not identify the underlying reason."
+    },
+    "tags": ["Ops", "Transport", "Service"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "ops-414",
+    "statement": "Hazmat packing audits were not performed before shipment release on the required daily schedule.",
+    "correct_type": "issue",
+    "rationale_correct": "This directly indicates noncompliance with a required safety control schedule.",
+    "common_traps": {
+      "symptom": "Missed audits are observable, but required schedule noncompliance makes it issue-level.",
+      "root_cause": "The statement does not explain why audits were missed."
+    },
+    "tags": ["Ops", "Safety", "Compliance"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "ops-415",
+    "statement": "Work instructions exist only as local desktop files, so floor teams execute outdated versions after process changes.",
+    "correct_type": "root_cause",
+    "rationale_correct": "Lack of controlled document distribution is an underlying process flaw enabling repeated execution errors.",
+    "common_traps": {
+      "symptom": "Execution errors are symptoms; uncontrolled instruction management is causal.",
+      "issue": "An issue exists, but this statement focuses on the enabling cause."
+    },
+    "tags": ["Ops", "Quality", "Process Control"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "ops-416",
+    "statement": "Cold-chain sensors reported temperature excursions in 7.8% of shipments after the packaging specification change.",
+    "correct_type": "symptom",
+    "rationale_correct": "This is an observed signal from monitoring and does not itself define a specific control breach or root mechanism.",
+    "common_traps": {
+      "issue": "Could indicate an issue, but no explicit policy threshold is stated in the sentence.",
+      "root_cause": "The statement does not identify why excursions occurred."
+    },
+    "tags": ["Ops", "Cold Chain", "Monitoring"],
+    "difficulty": "hard"
+  },
+  {
+    "id": "ops-417",
+    "statement": "Cross-docking loads bypassed seal verification in 9 of 25 sampled trailers, violating tamper-control requirements.",
+    "correct_type": "issue",
+    "rationale_correct": "This is explicit noncompliance with a required control step.",
+    "common_traps": {
+      "symptom": "Sample frequency is observable, but bypassing mandatory verification is issue-level.",
+      "root_cause": "No reason for bypass is provided."
+    },
+    "tags": ["Ops", "Security", "Compliance"],
+    "difficulty": "hard"
+  },
+  {
+    "id": "ops-418",
+    "statement": "The pick-path optimizer ignores vertical travel constraints, causing systematic underestimation of labor plans.",
+    "correct_type": "root_cause",
+    "rationale_correct": "Model design omission is an underlying reason enabling recurring planning inaccuracies.",
+    "common_traps": {
+      "symptom": "Labor overrun is the symptom; missing constraint logic is causal.",
+      "issue": "Issue-level misses may occur, but this statement identifies enabling mechanism."
+    },
+    "tags": ["Ops", "Planning", "Analytics"],
+    "difficulty": "hard"
+  },
+  {
+    "id": "ops-419",
+    "statement": "Variance between planned and actual labor hours exceeded 22% in four straight weekly staffing cycles.",
+    "correct_type": "symptom",
+    "rationale_correct": "This is a measured performance trend and does not itself state a breached control requirement or root cause.",
+    "common_traps": {
+      "issue": "It may suggest an issue, but no explicit policy/SLA breach is stated.",
+      "root_cause": "No underlying reason for the variance is identified."
+    },
+    "tags": ["Ops", "Workforce", "KPI"],
+    "difficulty": "hard"
+  },
+  {
+    "id": "ops-420",
+    "statement": "Incident escalation depends on manual email routing because the control tower has no rule-based alert orchestration.",
+    "correct_type": "root_cause",
+    "rationale_correct": "Missing orchestration capability is an underlying design limitation enabling delayed and inconsistent incident response.",
+    "common_traps": {
+      "symptom": "Delayed responses are symptoms; absent orchestration is causal.",
+      "issue": "Issue-level breaches can happen, but this statement names why they happen."
+    },
+    "tags": ["Ops", "Incident Management", "Control Tower"],
+    "difficulty": "hard"
+  }
+]

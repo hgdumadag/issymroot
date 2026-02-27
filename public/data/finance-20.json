@@ -1,0 +1,242 @@
+[
+  {
+    "id": "fin-201",
+    "statement": "The AP exception queue grew from 45 to 170 items in the weekly operations report.",
+    "correct_type": "symptom",
+    "rationale_correct": "This is an observed signal from reporting. It shows what is happening but not a specific control deviation or underlying reason.",
+    "common_traps": {
+      "issue": "It may indicate an issue, but no explicit policy or threshold breach is stated.",
+      "root_cause": "No enabling mechanism is identified."
+    },
+    "tags": ["Finance", "AP"],
+    "difficulty": "easy"
+  },
+  {
+    "id": "fin-202",
+    "statement": "Month-end journal approvals were completed after the policy deadline on 6 of 8 cycles.",
+    "correct_type": "issue",
+    "rationale_correct": "This explicitly describes deviation from a required control deadline.",
+    "common_traps": {
+      "symptom": "Late approvals are observable, but the policy deadline miss makes it issue-level.",
+      "root_cause": "The statement does not explain why approvals were late."
+    },
+    "tags": ["Finance", "Close Process"],
+    "difficulty": "easy"
+  },
+  {
+    "id": "fin-203",
+    "statement": "Vendor master changes are entered directly in ERP without a maker-checker workflow.",
+    "correct_type": "root_cause",
+    "rationale_correct": "Missing segregation-of-duties workflow is an underlying control design gap enabling downstream failures.",
+    "common_traps": {
+      "symptom": "This is not just an observed event; it describes a structural process weakness.",
+      "issue": "Issues may result, but this statement identifies why they recur."
+    },
+    "tags": ["Finance", "Master Data", "Controls"],
+    "difficulty": "easy"
+  },
+  {
+    "id": "fin-204",
+    "statement": "Unmatched cash receipts rose from 1.5% to 6.2% this month.",
+    "correct_type": "symptom",
+    "rationale_correct": "This is a measurable trend signal and does not itself define control noncompliance or causal source.",
+    "common_traps": {
+      "issue": "It may lead to an issue, but no explicit requirement breach is given.",
+      "root_cause": "No reason for the increase is provided."
+    },
+    "tags": ["Finance", "Cash Application"],
+    "difficulty": "easy"
+  },
+  {
+    "id": "fin-205",
+    "statement": "Expense reports above $5,000 were approved without receipts, violating the reimbursement policy.",
+    "correct_type": "issue",
+    "rationale_correct": "A clear control requirement is violated, which is issue-level by definition.",
+    "common_traps": {
+      "symptom": "This is more than observation because it references explicit policy noncompliance.",
+      "root_cause": "The statement does not identify why the control failed."
+    },
+    "tags": ["Finance", "T&E", "Compliance"],
+    "difficulty": "easy"
+  },
+  {
+    "id": "fin-206",
+    "statement": "Credit memo volume increased by 38% following the new billing template rollout.",
+    "correct_type": "symptom",
+    "rationale_correct": "This is an observed outcome trend, not a stated control breach or enabling root reason.",
+    "common_traps": {
+      "issue": "Potential issue, but no required threshold or policy deviation is named.",
+      "root_cause": "The mechanism behind the increase is not specified."
+    },
+    "tags": ["Finance", "Billing", "AR"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "fin-207",
+    "statement": "Bank reconciliations remained unsigned past the 10-business-day close control window.",
+    "correct_type": "issue",
+    "rationale_correct": "This explicitly indicates deviation from a documented control timing requirement.",
+    "common_traps": {
+      "symptom": "Unsigned reconciliations are observable, but the defined window breach makes it issue-level.",
+      "root_cause": "No reason for delayed sign-off is provided."
+    },
+    "tags": ["Finance", "Close Process", "Controls"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "fin-208",
+    "statement": "The revenue recognition engine lacks rule versioning, so auditors cannot trace which logic produced prior postings.",
+    "correct_type": "root_cause",
+    "rationale_correct": "Missing rule versioning is an underlying system design weakness that enables traceability and compliance issues.",
+    "common_traps": {
+      "symptom": "Traceability failures are outcomes; absent version control is the cause.",
+      "issue": "Issue-level deviations may occur, but this sentence identifies the enabling mechanism."
+    },
+    "tags": ["Finance", "Revenue", "Systems"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "fin-209",
+    "statement": "Manual journal entries over the materiality threshold bypassed secondary review in 14% of sampled cases.",
+    "correct_type": "issue",
+    "rationale_correct": "This states noncompliance with a required control activity for high-risk entries.",
+    "common_traps": {
+      "symptom": "The sample rate is measurable, but bypassing mandatory review is an explicit control failure.",
+      "root_cause": "The statement does not explain why review was bypassed."
+    },
+    "tags": ["Finance", "GL", "Controls"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "fin-210",
+    "statement": "Chargeback aging over 90 days rose from 9% to 21% across the quarter.",
+    "correct_type": "symptom",
+    "rationale_correct": "This is a reported signal trend and does not itself define control deviation or root cause.",
+    "common_traps": {
+      "issue": "Aging may reflect an issue, but no control criterion breach is explicitly cited.",
+      "root_cause": "No underlying reason for aging growth is identified."
+    },
+    "tags": ["Finance", "AR", "Disputes"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "fin-211",
+    "statement": "Intercompany eliminations were posted without supporting schedules, contrary to the consolidation control standard.",
+    "correct_type": "issue",
+    "rationale_correct": "This directly indicates deviation from a required control artifact.",
+    "common_traps": {
+      "symptom": "Posting volume might be a signal, but missing required schedules is explicit noncompliance.",
+      "root_cause": "No reason is provided for missing documentation."
+    },
+    "tags": ["Finance", "Consolidation", "Compliance"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "fin-212",
+    "statement": "The fixed-asset process has no automated tie-out between procurement and capitalization records.",
+    "correct_type": "root_cause",
+    "rationale_correct": "Lack of automation between source systems is an underlying process/system gap enabling repeated control breaks.",
+    "common_traps": {
+      "symptom": "Mismatches are observable effects; missing tie-out control is causal.",
+      "issue": "An issue can result, but this statement points to the enabling design gap."
+    },
+    "tags": ["Finance", "Fixed Assets", "Systems"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "fin-213",
+    "statement": "Treasury forecast variance exceeded 15% in three consecutive months.",
+    "correct_type": "symptom",
+    "rationale_correct": "This is a measured performance signal and does not specify a violated control or underlying mechanism.",
+    "common_traps": {
+      "issue": "Could indicate an issue, but no policy threshold or control requirement is referenced.",
+      "root_cause": "The statement does not explain what drives the variance."
+    },
+    "tags": ["Finance", "Treasury", "Forecasting"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "fin-214",
+    "statement": "SOX key-control evidence for user-access reviews was not retained for the required seven-year period.",
+    "correct_type": "issue",
+    "rationale_correct": "This is explicit noncompliance with a documented retention control requirement.",
+    "common_traps": {
+      "symptom": "Missing evidence is observable, but the required retention period makes this issue-level.",
+      "root_cause": "No underlying reason for evidence loss is stated."
+    },
+    "tags": ["Finance", "SOX", "ITGC"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "fin-215",
+    "statement": "The accrual model uses stale cost-center mappings because master-data sync runs only monthly while org changes are weekly.",
+    "correct_type": "root_cause",
+    "rationale_correct": "Misaligned data refresh cadence is an underlying cause enabling recurring accrual misclassification.",
+    "common_traps": {
+      "symptom": "Misclassified accruals are outcomes; stale mapping cadence is the cause.",
+      "issue": "Issue-level deviations can appear, but this statement names the root enabling factor."
+    },
+    "tags": ["Finance", "Close Process", "Master Data"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "fin-216",
+    "statement": "The transfer-pricing allocation job overwrote prior-period assumptions without maintaining immutable snapshots, breaking reproducibility requirements.",
+    "correct_type": "root_cause",
+    "rationale_correct": "Lack of immutable snapshots is the underlying system/control design flaw enabling reproducibility and audit failures.",
+    "common_traps": {
+      "symptom": "Reproducibility failures are effects; overwrite design is causal.",
+      "issue": "Noncompliance exists, but this statement emphasizes the mechanism that enables it."
+    },
+    "tags": ["Finance", "Tax", "Systems", "Auditability"],
+    "difficulty": "hard"
+  },
+  {
+    "id": "fin-217",
+    "statement": "Three legal entities recognized revenue before delivery milestones, breaching IFRS 15 performance-obligation criteria.",
+    "correct_type": "issue",
+    "rationale_correct": "This directly states deviation from a defined accounting standard requirement.",
+    "common_traps": {
+      "symptom": "This is not just a signal; it explicitly identifies a standards breach.",
+      "root_cause": "The statement does not explain why early recognition occurred."
+    },
+    "tags": ["Finance", "Revenue", "IFRS"],
+    "difficulty": "hard"
+  },
+  {
+    "id": "fin-218",
+    "statement": "Dual-currency remeasurement differences spiked after the ERP patch according to the monthly close dashboard.",
+    "correct_type": "symptom",
+    "rationale_correct": "This is an observed trend in reporting and does not itself assert a breached control requirement or mechanism.",
+    "common_traps": {
+      "issue": "May indicate an issue, but no explicit control criterion is cited.",
+      "root_cause": "The statement does not isolate the underlying reason beyond temporal correlation."
+    },
+    "tags": ["Finance", "Close Process", "FX"],
+    "difficulty": "hard"
+  },
+  {
+    "id": "fin-219",
+    "statement": "The provisioning engine excludes post-close credit events because it has no interface to the collections platform.",
+    "correct_type": "root_cause",
+    "rationale_correct": "Missing system integration is an upstream design limitation enabling downstream provisioning inaccuracies.",
+    "common_traps": {
+      "symptom": "Provisioning error rates are symptoms; absent interface is the causal gap.",
+      "issue": "Issue-level misstatement may occur, but this identifies why it happens."
+    },
+    "tags": ["Finance", "Credit Risk", "Systems"],
+    "difficulty": "hard"
+  },
+  {
+    "id": "fin-220",
+    "statement": "Manual override entries in CECL calculations lacked model-risk governance approval in 9 of 12 sampled cases.",
+    "correct_type": "issue",
+    "rationale_correct": "This is explicit noncompliance with required governance approval controls.",
+    "common_traps": {
+      "symptom": "Sample counts are observable, but missing mandatory approval is the issue.",
+      "root_cause": "The statement does not explain the underlying reason approvals were absent."
+    },
+    "tags": ["Finance", "Credit Risk", "Governance"],
+    "difficulty": "hard"
+  }
+]

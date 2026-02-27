@@ -1,0 +1,31 @@
+{
+  "name": "isr-quiz-app",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "typecheck": "vue-tsc --noEmit",
+    "lint:data": "node scripts/lint-quiz-data.mjs",
+    "test:unit": "vitest run",
+    "test:e2e": "playwright test",
+    "test": "npm run lint:data && npm run test:unit",
+    "ci": "npm run typecheck && npm run lint:data && npm run test:unit && npm run build"
+  },
+  "dependencies": {
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.53.0",
+    "@types/node": "^22.15.29",
+    "@vitejs/plugin-vue": "^5.2.4",
+    "@vue/test-utils": "^2.4.6",
+    "jsdom": "^26.1.0",
+    "typescript": "^5.8.3",
+    "vite": "^5.4.19",
+    "vitest": "^2.1.9",
+    "vue-tsc": "^2.2.8"
+  }
+}

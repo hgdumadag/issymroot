@@ -1,0 +1,242 @@
+[
+  {
+    "id": "it-301",
+    "statement": "CPU utilization on the primary API node increased from 35% to 88% during business hours this week.",
+    "correct_type": "symptom",
+    "rationale_correct": "This is an observable monitoring signal. It reports what is happening, not a control deviation requirement or underlying reason.",
+    "common_traps": {
+      "issue": "It may indicate an issue, but no explicit control threshold breach is stated.",
+      "root_cause": "No enabling mechanism is identified."
+    },
+    "tags": ["IT", "Infrastructure", "Monitoring"],
+    "difficulty": "easy"
+  },
+  {
+    "id": "it-302",
+    "statement": "Production firewall rule reviews were not completed within the monthly security-control deadline.",
+    "correct_type": "issue",
+    "rationale_correct": "This directly states deviation from a required control schedule.",
+    "common_traps": {
+      "symptom": "Late reviews are observable, but the missed control deadline makes it issue-level.",
+      "root_cause": "The statement does not explain why reviews were late."
+    },
+    "tags": ["IT", "Security", "Compliance"],
+    "difficulty": "easy"
+  },
+  {
+    "id": "it-303",
+    "statement": "Critical servers share one backup network path with no redundant route.",
+    "correct_type": "root_cause",
+    "rationale_correct": "This identifies an underlying architecture weakness that enables recurring backup/recovery failures.",
+    "common_traps": {
+      "symptom": "Outage behavior is a symptom; single-path design is causal.",
+      "issue": "Control failures may happen, but this statement identifies why they occur."
+    },
+    "tags": ["IT", "Resilience", "Architecture"],
+    "difficulty": "easy"
+  },
+  {
+    "id": "it-304",
+    "statement": "Service desk tickets classified as 'login failure' doubled after the identity provider update.",
+    "correct_type": "symptom",
+    "rationale_correct": "This is a trend signal from operations data and does not by itself define control noncompliance or root mechanism.",
+    "common_traps": {
+      "issue": "Could indicate an issue, but no explicit required control criterion is cited.",
+      "root_cause": "The underlying reason is not stated."
+    },
+    "tags": ["IT", "Identity", "Service Desk"],
+    "difficulty": "easy"
+  },
+  {
+    "id": "it-305",
+    "statement": "Privileged account recertification was skipped for Q2, violating access governance policy.",
+    "correct_type": "issue",
+    "rationale_correct": "This is explicit deviation from a documented control requirement.",
+    "common_traps": {
+      "symptom": "This is more than a signal because it states policy noncompliance.",
+      "root_cause": "It does not specify why recertification was skipped."
+    },
+    "tags": ["IT", "Identity", "ITGC"],
+    "difficulty": "easy"
+  },
+  {
+    "id": "it-306",
+    "statement": "Mean time to recover (MTTR) for P1 incidents increased from 42 to 96 minutes over the last month.",
+    "correct_type": "symptom",
+    "rationale_correct": "This is an observed operational metric shift, not an explicit control breach or causal explanation.",
+    "common_traps": {
+      "issue": "It can indicate an issue, but no required threshold is explicitly referenced.",
+      "root_cause": "No enabling reason is identified in the statement."
+    },
+    "tags": ["IT", "SRE", "Incident Management"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "it-307",
+    "statement": "Emergency change records were closed without post-implementation review within the required 48-hour window.",
+    "correct_type": "issue",
+    "rationale_correct": "This directly describes deviation from a required change-control criterion.",
+    "common_traps": {
+      "symptom": "The record status is observable, but the missed required window makes it issue-level.",
+      "root_cause": "The statement does not explain why reviews were not completed."
+    },
+    "tags": ["IT", "Change Management", "Controls"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "it-308",
+    "statement": "The patching workflow excludes offline branch devices because inventory sync runs only from corporate LAN.",
+    "correct_type": "root_cause",
+    "rationale_correct": "This identifies an underlying process/system design gap enabling recurring patch noncompliance.",
+    "common_traps": {
+      "symptom": "Unpatched endpoints are outcomes; sync design limitation is the cause.",
+      "issue": "Issue-level breaches result, but this statement names the enabling mechanism."
+    },
+    "tags": ["IT", "Endpoint", "Patch Management"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "it-309",
+    "statement": "Failed backup jobs remained unresolved beyond the 24-hour remediation SLA in 18% of daily runs.",
+    "correct_type": "issue",
+    "rationale_correct": "This is a clear breach of an explicit control remediation requirement.",
+    "common_traps": {
+      "symptom": "Failure rate is observable, but SLA breach makes it issue-level.",
+      "root_cause": "No underlying reason for unresolved jobs is provided."
+    },
+    "tags": ["IT", "Backup", "Operations"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "it-310",
+    "statement": "Database deadlock events rose by 240% after last Thursday's release.",
+    "correct_type": "symptom",
+    "rationale_correct": "This is an observed event trend and does not itself state a control deviation or root mechanism.",
+    "common_traps": {
+      "issue": "May imply an issue, but no explicit control criterion is cited.",
+      "root_cause": "The statement does not explain why deadlocks increased."
+    },
+    "tags": ["IT", "Database", "Release"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "it-311",
+    "statement": "Configuration drift checks are disabled on production clusters due to missing service account permissions.",
+    "correct_type": "root_cause",
+    "rationale_correct": "Missing permissions architecture is an underlying reason enabling persistent compliance and stability issues.",
+    "common_traps": {
+      "symptom": "Detected drift is a symptom; disabled control capability is causal.",
+      "issue": "Issues occur because of this, but this statement identifies the cause."
+    },
+    "tags": ["IT", "Cloud", "Configuration Management"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "it-312",
+    "statement": "Antivirus signature update success rate dropped from 99.2% to 92.7% in weekly endpoint reports.",
+    "correct_type": "symptom",
+    "rationale_correct": "This is a measured signal trend and does not itself describe a specific control requirement breach or root cause.",
+    "common_traps": {
+      "issue": "Could indicate an issue, but no explicit policy threshold is stated.",
+      "root_cause": "The enabling reason is not described."
+    },
+    "tags": ["IT", "Endpoint", "Security"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "it-313",
+    "statement": "Critical vulnerability scans for internet-facing assets were not executed on the mandated weekly cadence.",
+    "correct_type": "issue",
+    "rationale_correct": "This explicitly states noncompliance with a required control frequency.",
+    "common_traps": {
+      "symptom": "Scan absence is observable, but the mandated cadence miss makes it issue-level.",
+      "root_cause": "No reason for missed scans is provided."
+    },
+    "tags": ["IT", "Security", "Vulnerability Management"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "it-314",
+    "statement": "The CI pipeline allows direct merge to main because branch protection rules are not enforced in the repository settings.",
+    "correct_type": "root_cause",
+    "rationale_correct": "Missing branch protection is an upstream governance/control design gap that enables repeated change-quality failures.",
+    "common_traps": {
+      "symptom": "Bad deploy outcomes are symptoms; absent protection rules are causal.",
+      "issue": "Issue-level breaches may occur, but this statement identifies underlying enablement."
+    },
+    "tags": ["IT", "DevOps", "Change Management"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "it-315",
+    "statement": "Unauthorized software detections on managed laptops rose from 12 to 57 in the latest monthly report.",
+    "correct_type": "symptom",
+    "rationale_correct": "This is an observed compliance signal and does not itself state control criteria deviation or root mechanism.",
+    "common_traps": {
+      "issue": "Could imply an issue, but no explicit control tolerance breach is provided.",
+      "root_cause": "The statement does not identify why detections increased."
+    },
+    "tags": ["IT", "Endpoint", "Asset Management"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "it-316",
+    "statement": "Disaster recovery failover tests have no production-like data volume, so performance assumptions are never validated under realistic load.",
+    "correct_type": "root_cause",
+    "rationale_correct": "Test-design deficiency is an underlying reason that enables repeated resilience gaps.",
+    "common_traps": {
+      "symptom": "Slow failover is a symptom; unrealistic test design is causal.",
+      "issue": "Issue-level control misses result, but this statement explains the enabling cause."
+    },
+    "tags": ["IT", "Resilience", "DR"],
+    "difficulty": "hard"
+  },
+  {
+    "id": "it-317",
+    "statement": "Privileged session recordings were missing for 11 of 30 sampled administrator sessions, breaching audit-control requirements.",
+    "correct_type": "issue",
+    "rationale_correct": "This is explicit deviation from a required audit control.",
+    "common_traps": {
+      "symptom": "Sample counts are signals, but missing required recordings is direct noncompliance.",
+      "root_cause": "The statement does not explain why recording failed."
+    },
+    "tags": ["IT", "Security", "Audit"],
+    "difficulty": "hard"
+  },
+  {
+    "id": "it-318",
+    "statement": "Packet loss on east-west traffic spiked above 3% during peak batch windows after the network firmware update.",
+    "correct_type": "symptom",
+    "rationale_correct": "This is a measured behavior signal and does not alone identify control noncompliance or root mechanism.",
+    "common_traps": {
+      "issue": "It may indicate an issue, but no explicit required threshold breach from policy is referenced.",
+      "root_cause": "The causal chain behind packet loss is not established."
+    },
+    "tags": ["IT", "Network", "Performance"],
+    "difficulty": "hard"
+  },
+  {
+    "id": "it-319",
+    "statement": "The secrets management client does not support automatic key rotation hooks, forcing manual rotation for production services.",
+    "correct_type": "root_cause",
+    "rationale_correct": "Missing automation capability is an underlying technical cause that enables repeated secrets-control failures.",
+    "common_traps": {
+      "symptom": "Expired or stale keys are symptoms; missing rotation hooks are causal.",
+      "issue": "Issue-level misses can occur, but this statement identifies the enabling mechanism."
+    },
+    "tags": ["IT", "Security", "Platform Engineering"],
+    "difficulty": "hard"
+  },
+  {
+    "id": "it-320",
+    "statement": "Production access grants approved through break-glass remained active beyond the maximum 8-hour policy duration.",
+    "correct_type": "issue",
+    "rationale_correct": "This directly states violation of a defined access control requirement.",
+    "common_traps": {
+      "symptom": "Extended access is observable, but policy duration breach makes it issue-level.",
+      "root_cause": "No underlying reason for lingering access is identified."
+    },
+    "tags": ["IT", "Identity", "Access Control"],
+    "difficulty": "hard"
+  }
+]

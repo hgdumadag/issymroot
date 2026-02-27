@@ -1,0 +1,242 @@
+[
+  {
+    "id": "sec-501",
+    "statement": "Failed login attempts against the admin portal increased from 120 to 730 per day this week.",
+    "correct_type": "symptom",
+    "rationale_correct": "This is an observed signal from monitoring and does not by itself state a control requirement breach or underlying cause.",
+    "common_traps": {
+      "issue": "It may indicate an issue, but no explicit policy/control threshold breach is stated.",
+      "root_cause": "The enabling mechanism behind the increase is not identified."
+    },
+    "tags": ["Security", "Identity", "Monitoring"],
+    "difficulty": "easy"
+  },
+  {
+    "id": "sec-502",
+    "statement": "Quarterly privileged access recertification was not completed by the deadline required in the IAM control standard.",
+    "correct_type": "issue",
+    "rationale_correct": "This explicitly describes deviation from a required control activity and schedule.",
+    "common_traps": {
+      "symptom": "Late recertification is observable, but the missed required deadline makes it issue-level.",
+      "root_cause": "No reason is provided for why recertification was missed."
+    },
+    "tags": ["Security", "IAM", "Compliance"],
+    "difficulty": "easy"
+  },
+  {
+    "id": "sec-503",
+    "statement": "Production secrets are stored in application config files because no centralized secrets manager is integrated.",
+    "correct_type": "root_cause",
+    "rationale_correct": "This identifies an underlying architecture/control design gap enabling repeated credential exposure risks.",
+    "common_traps": {
+      "symptom": "Credential leaks are symptoms; missing secrets-management architecture is causal.",
+      "issue": "Issue-level violations may occur, but this statement names the enabling reason."
+    },
+    "tags": ["Security", "Secrets Management", "Architecture"],
+    "difficulty": "easy"
+  },
+  {
+    "id": "sec-504",
+    "statement": "Endpoint malware detections rose from 8 to 29 incidents in the latest monthly report.",
+    "correct_type": "symptom",
+    "rationale_correct": "This is an observed security signal trend and does not itself define a control deviation or root mechanism.",
+    "common_traps": {
+      "issue": "Could imply an issue, but no explicit required threshold/control criterion is cited.",
+      "root_cause": "The statement does not identify why detections increased."
+    },
+    "tags": ["Security", "Endpoint", "SOC"],
+    "difficulty": "easy"
+  },
+  {
+    "id": "sec-505",
+    "statement": "Critical vulnerabilities were left unpatched past the 15-day SLA defined in the patching policy.",
+    "correct_type": "issue",
+    "rationale_correct": "This directly states noncompliance with a defined control requirement.",
+    "common_traps": {
+      "symptom": "Open vulnerabilities are observable, but SLA breach makes it issue-level.",
+      "root_cause": "No underlying reason for missed patch timelines is provided."
+    },
+    "tags": ["Security", "Vulnerability Management", "Compliance"],
+    "difficulty": "easy"
+  },
+  {
+    "id": "sec-506",
+    "statement": "Data exfiltration alerts from egress monitoring doubled after the remote access expansion.",
+    "correct_type": "symptom",
+    "rationale_correct": "This is an observed monitoring signal and does not itself define a control breach requirement or root mechanism.",
+    "common_traps": {
+      "issue": "Potentially issue-indicating, but no explicit policy threshold breach is stated.",
+      "root_cause": "The specific enabling reason is not identified."
+    },
+    "tags": ["Security", "Network Security", "Monitoring"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "sec-507",
+    "statement": "Firewall rule changes were pushed to production without peer approval required by change-control policy.",
+    "correct_type": "issue",
+    "rationale_correct": "This is explicit deviation from a required control step in the process.",
+    "common_traps": {
+      "symptom": "This is more than a signal; it names a specific required approval that was skipped.",
+      "root_cause": "The statement does not explain why peer approval was bypassed."
+    },
+    "tags": ["Security", "Change Management", "Network"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "sec-508",
+    "statement": "The SIEM has no parser for cloud audit logs, so high-risk events are never normalized into alert rules.",
+    "correct_type": "root_cause",
+    "rationale_correct": "Missing log parsing capability is an upstream technical cause enabling monitoring control failures.",
+    "common_traps": {
+      "symptom": "Missed alerts are outcomes; absent parser capability is causal.",
+      "issue": "Issue-level misses occur because of this, but this statement identifies the enabling mechanism."
+    },
+    "tags": ["Security", "SIEM", "Cloud"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "sec-509",
+    "statement": "Phishing simulation click rate increased from 4% to 11% over two campaign cycles.",
+    "correct_type": "symptom",
+    "rationale_correct": "This is a measured behavior signal and does not itself state a specific control breach or root cause.",
+    "common_traps": {
+      "issue": "Could indicate an issue, but no explicit control requirement violation is referenced.",
+      "root_cause": "The statement does not identify why click rate increased."
+    },
+    "tags": ["Security", "Awareness", "Metrics"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "sec-510",
+    "statement": "Incident tickets with severity High were not escalated within the 30-minute SLA in 22% of cases.",
+    "correct_type": "issue",
+    "rationale_correct": "This explicitly states a breach of an established control/SLA requirement.",
+    "common_traps": {
+      "symptom": "Escalation delay is observable, but explicit SLA breach makes it issue-level.",
+      "root_cause": "No underlying reason for delayed escalation is provided."
+    },
+    "tags": ["Security", "Incident Response", "SOC"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "sec-511",
+    "statement": "Service accounts are shared across automation jobs with no ownership metadata, preventing accountable credential governance.",
+    "correct_type": "root_cause",
+    "rationale_correct": "Lack of ownership and account segmentation is an underlying governance/process flaw enabling repeated access-control issues.",
+    "common_traps": {
+      "symptom": "Audit gaps are symptoms; shared unowned accounts are the causal condition.",
+      "issue": "Issue-level noncompliance may appear, but this statement identifies enabling design weakness."
+    },
+    "tags": ["Security", "IAM", "Governance"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "sec-512",
+    "statement": "Suspicious PowerShell execution events rose by 45% on engineering endpoints in the last seven days.",
+    "correct_type": "symptom",
+    "rationale_correct": "This is an observable detection trend and does not by itself define policy deviation or underlying cause.",
+    "common_traps": {
+      "issue": "May imply an issue, but no specific required threshold/control criterion is cited.",
+      "root_cause": "The statement does not explain what enabled the rise."
+    },
+    "tags": ["Security", "Endpoint", "Detection Engineering"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "sec-513",
+    "statement": "Third-party vendor access logs were not retained for the minimum one-year period required by policy.",
+    "correct_type": "issue",
+    "rationale_correct": "This is direct noncompliance with an explicit control requirement.",
+    "common_traps": {
+      "symptom": "Missing logs are observable, but retention policy breach makes it issue-level.",
+      "root_cause": "The statement does not identify why retention failed."
+    },
+    "tags": ["Security", "Third-Party Risk", "Compliance"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "sec-514",
+    "statement": "Container image scanning runs only in pre-prod and is absent in production deployment pipelines.",
+    "correct_type": "root_cause",
+    "rationale_correct": "Pipeline design omission is an underlying reason enabling recurring runtime exposure to vulnerable images.",
+    "common_traps": {
+      "symptom": "Vulnerable runtime findings are symptoms; missing production scanning control is causal.",
+      "issue": "Issue-level breaches can happen, but this statement identifies why."
+    },
+    "tags": ["Security", "DevSecOps", "Containers"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "sec-515",
+    "statement": "TLS certificate expiration warnings increased from 3 to 19 services this quarter.",
+    "correct_type": "symptom",
+    "rationale_correct": "This is an observed signal trend and does not itself describe a specific control requirement breach or root mechanism.",
+    "common_traps": {
+      "issue": "Could indicate an issue, but no explicit policy/SLA breach is stated.",
+      "root_cause": "The statement does not identify why expirations are increasing."
+    },
+    "tags": ["Security", "PKI", "Operations"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "sec-516",
+    "statement": "The DLP policy excludes compressed file formats, allowing sensitive data transfers to bypass inspection controls.",
+    "correct_type": "root_cause",
+    "rationale_correct": "Policy coverage gap is an underlying control design flaw enabling repeated data-loss control failures.",
+    "common_traps": {
+      "symptom": "Undetected transfers are symptoms; exclusion of file formats is causal.",
+      "issue": "Issue-level events occur because of this, but the statement names the enabling mechanism."
+    },
+    "tags": ["Security", "DLP", "Data Protection"],
+    "difficulty": "hard"
+  },
+  {
+    "id": "sec-517",
+    "statement": "MFA bypass exceptions remained active beyond the maximum 14-day emergency window defined in access policy.",
+    "correct_type": "issue",
+    "rationale_correct": "This directly states a deviation from a documented control duration requirement.",
+    "common_traps": {
+      "symptom": "Exception counts are observable, but expired emergency window noncompliance is issue-level.",
+      "root_cause": "The statement does not explain why exceptions were not revoked."
+    },
+    "tags": ["Security", "IAM", "Access Control"],
+    "difficulty": "hard"
+  },
+  {
+    "id": "sec-518",
+    "statement": "Kerberos ticket replay detections increased by 300% after trust relationship changes between domains.",
+    "correct_type": "symptom",
+    "rationale_correct": "This is a measured detection trend and does not itself establish control noncompliance or an enabling root mechanism.",
+    "common_traps": {
+      "issue": "Could imply an issue, but no explicit required control threshold is stated.",
+      "root_cause": "The underlying mechanism for replay increase is not identified."
+    },
+    "tags": ["Security", "Identity", "Threat Detection"],
+    "difficulty": "hard"
+  },
+  {
+    "id": "sec-519",
+    "statement": "The asset inventory feed does not include ephemeral cloud workloads, so vulnerability scans omit short-lived instances.",
+    "correct_type": "root_cause",
+    "rationale_correct": "Inventory integration gap is an underlying technical reason enabling persistent blind spots in vulnerability controls.",
+    "common_traps": {
+      "symptom": "Missed vulnerabilities are symptoms; incomplete inventory coverage is causal.",
+      "issue": "Issue-level scan gaps result, but this statement identifies why."
+    },
+    "tags": ["Security", "Cloud Security", "Asset Management"],
+    "difficulty": "hard"
+  },
+  {
+    "id": "sec-520",
+    "statement": "Forensic log integrity checks were not run before case closure in 7 of 12 sampled investigations, contrary to DFIR procedure.",
+    "correct_type": "issue",
+    "rationale_correct": "This explicitly states noncompliance with a required investigative control step.",
+    "common_traps": {
+      "symptom": "Sampled misses are observable, but skipping required integrity checks is issue-level.",
+      "root_cause": "The statement does not identify why checks were omitted."
+    },
+    "tags": ["Security", "DFIR", "Compliance"],
+    "difficulty": "hard"
+  }
+]

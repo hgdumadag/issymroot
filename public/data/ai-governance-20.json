@@ -1,0 +1,242 @@
+[
+  {
+    "id": "aigov-201",
+    "statement": "The fairness gap between Group A and Group B increased from 2% to 8% in this week's evaluation report.",
+    "correct_type": "symptom",
+    "rationale_correct": "This is an observed measurement change. It reports what is happening but does not itself state a control breach requirement or the underlying reason.",
+    "common_traps": {
+      "issue": "It may indicate a governance issue, but no explicit policy threshold is referenced.",
+      "root_cause": "No enabling mechanism is identified in the statement."
+    },
+    "tags": ["AI Gov", "Model Risk"],
+    "difficulty": "easy"
+  },
+  {
+    "id": "aigov-202",
+    "statement": "The model was released to production without the required Responsible AI committee sign-off documented in the release checklist.",
+    "correct_type": "issue",
+    "rationale_correct": "This describes a direct deviation from a required control step, which is issue-level by the rubric.",
+    "common_traps": {
+      "symptom": "It is more than an observation because it explicitly references a missed mandatory control.",
+      "root_cause": "The statement does not explain why sign-off was skipped."
+    },
+    "tags": ["AI Gov", "Compliance"],
+    "difficulty": "easy"
+  },
+  {
+    "id": "aigov-203",
+    "statement": "The deployment workflow has no mandatory approval gate for high-risk model changes.",
+    "correct_type": "root_cause",
+    "rationale_correct": "This identifies the underlying process/design gap that enables repeated governance failures.",
+    "common_traps": {
+      "symptom": "This is not just an observed signal; it describes structural control design.",
+      "issue": "An issue may occur because of this, but this statement names the enabling cause."
+    },
+    "tags": ["AI Gov", "MLOps"],
+    "difficulty": "easy"
+  },
+  {
+    "id": "aigov-204",
+    "statement": "Hallucination rate on customer support prompts rose from 4% to 11% over the last three weekly runs.",
+    "correct_type": "symptom",
+    "rationale_correct": "This is an observable performance signal trend and does not, by itself, specify a criteria breach or causal mechanism.",
+    "common_traps": {
+      "issue": "It becomes issue-level only when tied to a defined acceptance threshold or control requirement.",
+      "root_cause": "The statement does not identify why hallucinations increased."
+    },
+    "tags": ["AI Gov", "Quality"],
+    "difficulty": "easy"
+  },
+  {
+    "id": "aigov-205",
+    "statement": "Data lineage metadata is missing for 30% of training records, violating the policy that requires complete lineage for all production models.",
+    "correct_type": "issue",
+    "rationale_correct": "The statement explicitly describes deviation from a defined governance requirement.",
+    "common_traps": {
+      "symptom": "Missing metadata can be observed, but the explicit policy violation makes it issue-level.",
+      "root_cause": "No explanation is given for why lineage capture failed."
+    },
+    "tags": ["AI Gov", "Data Governance"],
+    "difficulty": "easy"
+  },
+  {
+    "id": "aigov-206",
+    "statement": "PII detector alerts on model outputs tripled after last Friday's dataset refresh.",
+    "correct_type": "symptom",
+    "rationale_correct": "This is an observed monitoring signal indicating potential risk, not a stated control deviation or root mechanism.",
+    "common_traps": {
+      "issue": "It may imply an issue, but no explicit control threshold is cited.",
+      "root_cause": "The reason for increased alerts is not provided."
+    },
+    "tags": ["AI Gov", "Privacy"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "aigov-207",
+    "statement": "Model cards were not updated within the five-business-day window required after model retraining.",
+    "correct_type": "issue",
+    "rationale_correct": "This is a direct miss against a documented governance timing requirement.",
+    "common_traps": {
+      "symptom": "The statement includes an explicit required window, making it more than a signal.",
+      "root_cause": "It does not explain why documentation updates were late."
+    },
+    "tags": ["AI Gov", "Documentation"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "aigov-208",
+    "statement": "The feature store does not keep immutable training snapshots, so teams cannot reproduce the exact dataset used for approvals.",
+    "correct_type": "root_cause",
+    "rationale_correct": "Lack of immutable snapshots is an underlying technical/process reason enabling reproducibility and governance failures.",
+    "common_traps": {
+      "symptom": "Inability to reproduce is an outcome; missing snapshot capability is the cause.",
+      "issue": "Issue-level deviations may result, but this statement identifies the enabling mechanism."
+    },
+    "tags": ["AI Gov", "Data Governance", "MLOps"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "aigov-209",
+    "statement": "Human override decisions on high-risk outputs are being logged two days late, beyond the 24-hour control requirement.",
+    "correct_type": "issue",
+    "rationale_correct": "This directly states deviation from a required control timeline.",
+    "common_traps": {
+      "symptom": "Late logs are observable, but the explicit 24-hour breach makes it issue-level.",
+      "root_cause": "No underlying reason is given for delayed logging."
+    },
+    "tags": ["AI Gov", "Controls"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "aigov-210",
+    "statement": "Vendor contracts for external model providers omit right-to-audit clauses required for third-party AI risk oversight.",
+    "correct_type": "root_cause",
+    "rationale_correct": "Missing contract clauses are an upstream governance design gap that enables downstream oversight failures.",
+    "common_traps": {
+      "symptom": "This is not merely observed behavior; it identifies a structural control gap.",
+      "issue": "An issue exists, but the statement emphasizes the underlying contractual cause."
+    },
+    "tags": ["AI Gov", "Third-Party Risk", "Compliance"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "aigov-211",
+    "statement": "KL divergence between live traffic and validation data rose from 0.05 to 0.21 over the last two weeks.",
+    "correct_type": "symptom",
+    "rationale_correct": "This is an observed drift signal and does not itself state a breached policy criterion or causal reason.",
+    "common_traps": {
+      "issue": "It can contribute to an issue, but no explicit required threshold is cited.",
+      "root_cause": "The statement does not identify why drift increased."
+    },
+    "tags": ["AI Gov", "Model Risk", "Monitoring"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "aigov-212",
+    "statement": "Open red-team findings for prompt injection remained unresolved past the 14-day remediation SLA in the governance standard.",
+    "correct_type": "issue",
+    "rationale_correct": "This states a clear deviation from an established remediation control requirement.",
+    "common_traps": {
+      "symptom": "The statement references a specific SLA breach, which makes it issue-level.",
+      "root_cause": "No underlying reason for missed remediation is provided."
+    },
+    "tags": ["AI Gov", "Security", "Controls"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "aigov-213",
+    "statement": "The AI risk register assigns no control owner for model decommissioning, leaving critical tasks without accountable ownership.",
+    "correct_type": "root_cause",
+    "rationale_correct": "Missing ownership in governance design is an underlying reason enabling repeated control failures.",
+    "common_traps": {
+      "symptom": "Unfinished tasks are outcomes; absent accountability structure is causal.",
+      "issue": "Control misses may occur, but this statement identifies why they are likely."
+    },
+    "tags": ["AI Gov", "Operating Model"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "aigov-214",
+    "statement": "Requests for policy exceptions on model transparency disclosures increased from 2 to 17 in the current quarter.",
+    "correct_type": "symptom",
+    "rationale_correct": "This is an observed trend signal and does not alone indicate a specific control requirement breach.",
+    "common_traps": {
+      "issue": "Exception volume growth may be risky, but no explicit failed requirement is stated.",
+      "root_cause": "The statement does not identify the underlying driver for increased exceptions."
+    },
+    "tags": ["AI Gov", "Compliance"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "aigov-215",
+    "statement": "Canary rollout moved to 100% traffic without the required human-in-the-loop approval for high-impact decisions.",
+    "correct_type": "issue",
+    "rationale_correct": "This is an explicit deviation from a required governance control step.",
+    "common_traps": {
+      "symptom": "This goes beyond observation because it names a mandatory approval that was skipped.",
+      "root_cause": "No reason is provided for why approval was bypassed."
+    },
+    "tags": ["AI Gov", "MLOps", "Controls"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "aigov-216",
+    "statement": "The evaluation dataset excludes protected-attribute labels, preventing required subgroup fairness tests from being executed.",
+    "correct_type": "root_cause",
+    "rationale_correct": "Missing required labels is an upstream data design deficiency that enables downstream governance test failures.",
+    "common_traps": {
+      "symptom": "Failed fairness testing is an outcome; absent label design is the underlying cause.",
+      "issue": "Issue-level deviations may occur, but this statement identifies the enabling reason."
+    },
+    "tags": ["AI Gov", "Data Governance", "Fairness"],
+    "difficulty": "hard"
+  },
+  {
+    "id": "aigov-217",
+    "statement": "The deletion workflow removes records from the primary store but not from vector index shards, allowing deleted personal data to reappear in retrieval.",
+    "correct_type": "root_cause",
+    "rationale_correct": "This identifies a technical control design gap that directly enables recurring privacy and governance failures.",
+    "common_traps": {
+      "symptom": "Reappearing records are symptoms; incomplete deletion architecture is causal.",
+      "issue": "Issue-level noncompliance may result, but the statement explains the underlying mechanism."
+    },
+    "tags": ["AI Gov", "Privacy", "Architecture"],
+    "difficulty": "hard"
+  },
+  {
+    "id": "aigov-218",
+    "statement": "A privacy impact assessment was still incomplete when biometric features were added, breaching the pre-release governance requirement.",
+    "correct_type": "issue",
+    "rationale_correct": "This clearly states deviation from a required governance control before release.",
+    "common_traps": {
+      "symptom": "The statement cites a specific pre-release requirement that was not met, making it issue-level.",
+      "root_cause": "It does not identify why the assessment process failed."
+    },
+    "tags": ["AI Gov", "Privacy", "Compliance"],
+    "difficulty": "hard"
+  },
+  {
+    "id": "aigov-219",
+    "statement": "Counterfactual fairness delta widened by 0.12 after the retrieval-ranking model update, according to the weekly assurance report.",
+    "correct_type": "symptom",
+    "rationale_correct": "This is a measured outcome signal. It indicates potential risk but does not by itself state a breached control criterion or root mechanism.",
+    "common_traps": {
+      "issue": "Without an explicit required threshold breach in the statement, it remains symptom-level.",
+      "root_cause": "The update is mentioned, but the enabling mechanism for the change is not explained."
+    },
+    "tags": ["AI Gov", "Fairness", "Monitoring"],
+    "difficulty": "hard"
+  },
+  {
+    "id": "aigov-220",
+    "statement": "The reward-model objective optimizes user engagement only and omits policy-alignment penalties, enabling unsafe optimization pressure.",
+    "correct_type": "root_cause",
+    "rationale_correct": "This identifies an upstream objective-function design flaw that enables downstream governance and safety failures.",
+    "common_traps": {
+      "symptom": "Unsafe outputs are symptoms; objective design is the deeper cause.",
+      "issue": "Issue-level violations can result, but the statement names the enabling technical reason."
+    },
+    "tags": ["AI Gov", "Safety", "Model Design"],
+    "difficulty": "hard"
+  }
+]
